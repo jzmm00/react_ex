@@ -1,0 +1,35 @@
+.list-page{
+    padding-bottom: 40px;
+}
+.list-page .page-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 10px 24px;
+}
+.list-page .page-top .select-area{
+    display: flex;
+    gap: 8px;
+}
+
+.list-page .goNew{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 500;
+}
+
+.list-page .goNew a{
+    display: block;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    padding: 16px;
+    border-radius: 50%;
+    background-color: #cfeef3;
+}
+
+.list-page .goNew img{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, input, button{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #121212;
+}
+
+ul{
+    list-style: none;
+}
+
+img, input, button{
+    vertical-align: top;
+}
+input{
+    border: 1px solid #ccc;
+}
+button{
+    border: 0;
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+#wrapper{
+    width: 500px;
+    border: 4px solid #121212;
+    border-radius: 32px;
+    padding: 40px 40px 48px 40px;
+    margin: 40px auto;
+}
+
+#wrapper h2{
+    margin-bottom: 12px;
+}
+
+#top, #editor{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#top .todoy{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.edit-box input{
+    width: 386px;
+    height: 38px;
+    padding: 0 12px;
+    margin-right: 8px;
+}
+.edit-box button{
+    width: 80px;
+    height: 40px;
+}
+
+#todo_list .search{
+    margin-bottom: 20px;
+}
+
+#todo_list .search input{
+    width: 474px;
+    height: 38px;
+    padding: 0 12px;
+}
+
+.todo-list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 12px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.todo-list li > div{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.todo-list li .left{
+    gap: 8px;
+}
+
+.todo-list li .check{
+    height: 13px;
+}
+
+.todo-list li .content{
+    width: 250px;
+}
+
+.todo-list li button{
+    width: 60px;
+    height: 32px;
+}
+
+.todo-list li .EditForm{
+    position: absolute;
+    top: 12px;
+    left: 21px;
+    right: 0;
+    background-color: #fff;
+}
+
+.todo-list li .EditForm input{
+    width: 389px;
+    height: 30px;
+    padding: 0 12px;
+    margin-right: 4px;
+}
+
+
+.todo-list li .date{
+    margin-right: 12px;
+}
+
+.todo-list li button{
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.todo-list .done{
+    text-decoration: line-through;
+}

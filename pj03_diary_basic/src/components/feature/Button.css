@@ -1,0 +1,37 @@
+.btn-prev button, 
+.btn-next button{
+    width: 40px;
+    height: 40px;
+}
+.btn-prev button::before, 
+.btn-next button::before{
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #555;
+    border-right: 2px solid #555;
+}
+.btn-prev button::before{
+    margin-left: 14px;
+    transform: rotate(-135deg);
+}
+.btn-next button::before{
+    margin-left: 8px;
+    transform: rotate(45deg);
+}
+
+.btn-process button{
+    width: 120px;
+    height: 48px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.btn-process.cancle button{
+    background-color: #eee;
+    color: #333;
+}
+.btn-process.primary button{
+    background-color: #cfeef3;
+    color: #032429;
+}

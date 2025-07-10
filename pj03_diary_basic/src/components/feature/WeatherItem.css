@@ -1,0 +1,19 @@
+.weather-item{
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+.weather-item button{
+    width: 90px;
+    padding: 16px 0;
+    background-color: #f0f0f0;
+}
+.weather-item button .icon{
+    margin-right: 4px;
+}
+.weather-item.active{
+    filter: grayscale(0);
+    opacity: 1;
+}
+.weather-item.active button{
+    background-color: #d9eff3;
+}

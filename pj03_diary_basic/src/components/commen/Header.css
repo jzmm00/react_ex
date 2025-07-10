@@ -1,0 +1,20 @@
+#header{
+    position: relative;
+    height: 64px;
+    border-bottom: 1px solid #ddd;
+}
+#header .title{
+    text-align: center;
+    line-height: 64px;
+}
+#header .btn-prev, 
+#header .btn-next{
+    position: absolute;
+    top: 12px;
+}
+#header .btn-prev{
+    left: 12px;
+}
+#header .btn-next{
+    right: 12px;
+}
