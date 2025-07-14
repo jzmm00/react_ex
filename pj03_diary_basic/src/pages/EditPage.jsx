@@ -4,7 +4,7 @@ import { Header } from "../components/commen";
 import { DiaryEditor } from "../components/diary";
 import { BtnArrow } from "../components/feature";
 
-const EditPage = () => {
+const EditPage = ({initialData, onUpdate}) => {
     const { id } = useParams();
     const numericId = Number(id);
 
@@ -13,26 +13,21 @@ const EditPage = () => {
     const [diary, setDiary] = useState({});
 
     useEffect(() => {
-        fetchData();
+        fetchData(initialData);
     }, [id]);
 
-    const fetchData = () => {
-        const data = sessionStorage.getItem('diary') || '[]';
-        const diaryList = JSON.parse(data);
-        const found = diaryList.find(item => item.id === numericId);
-        if (!found) {
-            setNotFound(true);
-        } else {
-            setDiary(found);
-        }
+    const fetchData = (data) => {
+        const found = data.find(item => item.id === numericId);
+        setDiary(found);
     }
 
     const handleClickBack = () => {
         navigate(-1);
     }
 
-    const handleUpdate = () => {
-        console.log('수정하기');
+    const handleUpdate = (formData) => {
+        onUpdate(numericId, formData)
+        navigate(`/detail/${id}`);
     }
 
     return (

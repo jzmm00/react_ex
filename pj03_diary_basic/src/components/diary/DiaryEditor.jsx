@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { WeatherItem, BtnProcess } from "../feature";
 import "./DiaryEditor.css";
@@ -24,22 +24,10 @@ const WEATHER_LIST = [
 const DiaryEditor = ({ isEdit, onCreate, onUpdate, data }) => {
     const navigate = useNavigate();
 
-    // YYYY-MM-DD 포맷의 문자열 필요
-    // const todayString = new Date().toISOString().slice(0, 10);
-    const dateString = d => {
-        
-        return d.toISOString().slice(0, 10);
-    };
+    const todayString = new Date().toISOString().slice(0, 10);
 
-    const initialTitle = data?data.title:'';
-
-    const initialDate = data
-        ? dateString(data.date)
-        : dateString();
-
-    const [title, setTitle] = useState(initialTitle);
-    // const [date, setDate] = useState(todayString);
-    const [date, setDate] = useState(initialDate);
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState(todayString);
     const [weather, setWeather] = useState('sunny');
     const [content, setContent] = useState('');
 
@@ -47,6 +35,16 @@ const DiaryEditor = ({ isEdit, onCreate, onUpdate, data }) => {
     const contentRef = useRef();
     const titelNotiRef = useRef();
     const contentNotiRef = useRef();
+
+    useEffect(() => {
+        if (isEdit && data.id) {
+            // ?? null 병합 연산자. 
+            setTitle(data.title ?? '');
+            setDate(data.date ?? todayString);
+            setWeather(data.weather ?? 'sunny');
+            setContent(data.content ?? '');
+        }
+    }, [isEdit, data]);
 
     const handleChangeTitle = (e) => {
         titelNotiRef.current.style.display = 'none';
@@ -88,8 +86,9 @@ const DiaryEditor = ({ isEdit, onCreate, onUpdate, data }) => {
             return;
         }
 
+        const id = isEdit&&data.id ? data.id : new Date().getTime();
         const formData = {
-            id: new Date().getTime(),
+            id,
             title,
             date,
             weather,
@@ -98,11 +97,13 @@ const DiaryEditor = ({ isEdit, onCreate, onUpdate, data }) => {
 
         if (confirm(isEdit ? '수정을 완료하시겠습니까?' : '작성을 완료하시겠습니까?')) {
             if (isEdit) {
-                onUpdate();
+                onUpdate(formData);
             } else {
                 onCreate(formData);
             }
         }
+        
+        navigate('/');
     }
 
     return (

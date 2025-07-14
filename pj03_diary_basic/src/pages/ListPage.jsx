@@ -26,8 +26,7 @@ const FILTER_OPTION_LIST = [
     { value: 'rainy', name: '비' }
 ];
 
-const ListPage = () => {
-    const [allDiaryData, setAllDiaryData] = useState([]);
+const ListPage = ({initialData}) => {
     const [diaryData, setDiaryData] = useState([]);
     const [nowDate, setNowDate] = useState(new Date());
     const displayToday = nowDate.toLocaleDateString();
@@ -36,18 +35,8 @@ const ListPage = () => {
     const [currentFilter, setCurrentFilter] = useState(FILTER_OPTION_LIST[0].value);
 
     useEffect(() => {
-        fetchData();
-    }, [])
-
-    useEffect(() => {
-        filteredDiary(allDiaryData);
-    }, [allDiaryData, nowDate])
-
-    const fetchData = () => {
-        const sessionData = sessionStorage.getItem('diary') || '[]';
-        const diary = JSON.parse(sessionData);
-        setAllDiaryData(diary);
-    }
+        filteredDiary(initialData);
+    }, [initialData, nowDate]);
 
     const handleClickPrev = () => {
         setNowDate(new Date(nowDate.getFullYear(), nowDate.getMonth() - 1, nowDate.getDate()));
@@ -59,8 +48,8 @@ const ListPage = () => {
 
     const filteredDiary = (data) => {
         const firstDay = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1);
-        const lastDay = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 0);
-        setDiaryData(data.filter(diary => new Date(diary.date) >= firstDay && new Date(diary.date) <= lastDay));
+        const lastDay = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 1);
+        setDiaryData(data.filter(diary => new Date(diary.date) >= firstDay && new Date(diary.date) < lastDay));
     }
 
     const getFilterChange = () => {
@@ -100,19 +89,19 @@ const ListPage = () => {
                         handleClick={handleClickNext}
                     />
                 }
-            />            
+            />
             <div className="page-top">
                 <div className="total">총 {filterSortList.length}개</div>
                 <div className="select-area">
-                    <SelectBox 
-                        optionList={SORT_OPTION_LIST} 
-                        value={currentSort} 
-                        handleChange={setCurrentSort} 
+                    <SelectBox
+                        optionList={SORT_OPTION_LIST}
+                        value={currentSort}
+                        handleChange={setCurrentSort}
                     />
-                    <SelectBox 
-                        optionList={FILTER_OPTION_LIST} 
-                        value={currentFilter} 
-                        handleChange={setCurrentFilter} 
+                    <SelectBox
+                        optionList={FILTER_OPTION_LIST}
+                        value={currentFilter}
+                        handleChange={setCurrentFilter}
                     />
                 </div>
             </div>

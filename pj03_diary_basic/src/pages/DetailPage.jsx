@@ -5,7 +5,7 @@ import { DiaryDetail } from "../components/diary";
 import { NotFound } from "../components/error";
 import { BtnArrow } from "../components/feature";
 
-const DetailPage = () => {
+const DetailPage = ({ initialData, onRemove }) => {
     const { id } = useParams();
     const numericId = Number(id);
 
@@ -15,13 +15,11 @@ const DetailPage = () => {
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        fetchData();
+        fetchData(initialData);
     }, [id]);
 
-    const fetchData = () => {
-        const data = sessionStorage.getItem('diary') || '[]';
-        const diaryList = JSON.parse(data);
-        const found = diaryList.find(item => item.id === numericId);
+    const fetchData = (data) => {
+        const found = data.find(item => item.id === numericId);
         if (!found) {
             setNotFound(true);
         } else {
@@ -37,10 +35,7 @@ const DetailPage = () => {
         if (!window.confirm('해당 다이어리를 정말 삭제하시겠습니까?')) {
             return;
         }
-        const data = sessionStorage.getItem('diary') || '[]';
-        const diaryList = JSON.parse(data);
-        const updatedList = diaryList.filter(item => item.id !== numericId);
-        sessionStorage.setItem('diary', JSON.stringify(updatedList));
+        onRemove(numericId);
         navigate('/');
     };
 
