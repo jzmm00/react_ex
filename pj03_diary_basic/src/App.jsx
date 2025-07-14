@@ -10,7 +10,7 @@ const initialDataReducer = (state, action) => {
     let newDiary = [];
     switch (action.type) {
         case 'INIT':
-            return action.payload;
+            return action.initData;
         case 'CREATE':
             newDiary = [
                 ...state,        
@@ -33,7 +33,10 @@ function App() {
     useEffect(() => {
         async function load() {
             const res = await axios.get('/data/initialDiary.json');
-            initialDataDispatch({ type: 'INIT', payload: res.data });
+            initialDataDispatch({ 
+                type: 'INIT', 
+                initData: res.data 
+            });
         }
         load();
     }, []);
