@@ -1,0 +1,37 @@
+.diary-editor{
+    padding: 20px 24px;
+}
+.diary-editor > div{
+    margin-bottom: 20px;
+}
+.diary-editor h3{
+    margin-bottom: 8px;
+}
+.diary-editor .title input,
+.diary-editor .date input,
+.diary-editor .content textarea{
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+}
+.diary-editor .content textarea{
+    height: 200px;
+    padding: 12px;
+}
+.diary-editor .noti{
+    display: none;
+    margin-top: 4px;
+    text-align: right;
+    color: #e94200;
+}
+.diary-editor .weather ul{
+    display: flex;
+    gap: 4px;
+}
+.diary-editor .processBtn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}

@@ -1,0 +1,19 @@
+.diary-item a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #ddd;
+    padding: 20px 24px;
+}
+.diary-item .left{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.diary-item .left .title{
+    font-size: 16px;
+    color: #121212;
+}
+.diary-item .date{
+    color: #555;
+}

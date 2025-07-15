@@ -1,0 +1,20 @@
+.diary-detail{
+    padding: 40px 24px;
+}
+.diary-detail .top{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.diary-detail .content{
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.diary-detail .btns{
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
