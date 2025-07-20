@@ -1,0 +1,79 @@
+#gnb{
+    position: relative;
+    height: 60px;
+    padding-top: 20px;
+    overflow: hidden;
+    transition: height 0.2s;
+    background-color: #fff;
+}
+#gnb .depth1 {
+    display: flex;
+    justify-content: center;
+}
+#gnb .depth1 > li > a{
+    display: block;
+    padding: 0 20px;
+    font-weight: 500;
+    color: #555;
+}
+#gnb .depth1 > li > a > span{
+    padding-bottom: 30px;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+#gnb .depth1 > li:hover > a{
+    color: #121212;
+}
+#gnb .depth1 > li:hover > a > span{
+    border-bottom: 2px solid #444;
+}
+#gnb .depth2{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #444;
+    background-color: #fff;
+    display: none;
+}
+#gnb .depth1 > li:hover .depth2{
+    display: block;
+}
+#gnb .depth2-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+#gnb .depth2-menu > ul{
+    display: flex;
+    gap: 52px;
+}
+#gnb .depth2-menu > ul > li > a{
+    display: block;
+    margin-bottom: 4px;
+    color: #121212;
+    font-weight: 500;
+}
+#gnb .depth2-menu > ul > li:hover > a{
+    text-decoration: underline;
+}
+#gnb .depth3-menu li{
+    line-height: 28px;
+}
+#gnb .depth3-menu li a{
+    color: #555;
+}
+#gnb .depth3-menu li a:hover{
+    color: #222;
+}
+#gnb .depth2-img ul{
+    display: flex;
+    gap: 12px;
+}
+#gnb .depth2-img img{
+    width: 212px;
+    height: 252px;
+    object-fit: cover;
+}

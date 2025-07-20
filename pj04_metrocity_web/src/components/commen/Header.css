@@ -1,0 +1,38 @@
+#header{
+    position: relative;
+    height: 80px;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 40px;
+    z-index: 500;
+}
+#header .logo{
+    position: absolute;
+    top: 31px;
+    left: 40px;
+    z-index: 10;
+}
+#header .utills{    
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+}
+#header .utills ul{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+#header .utills li a{
+    color: #555;
+}
+#header .utills li:hover a{
+    color: #222;
+}
+#header .utills .btn-open-search button{
+    width: 20px;
+    height: 40px;
+}
+#header .utills .btn-open-search img{
+    width: 16px;
+    height: auto;
+}

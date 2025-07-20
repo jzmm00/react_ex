@@ -1,0 +1,17 @@
+.SeachWrap{
+    position: absolute;
+    top: 81px;
+    left: 0;
+    width: 100%;
+    background-color: antiquewhite
+}
+.SeachWrap .search-inner{
+    width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.SeachWrap .search-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

@@ -1,0 +1,13 @@
+.SeachKeyword h3{
+    font-weight: 400;
+}
+.SeachKeyword .keyword-list li{
+    line-height: 32px;
+}
+.SeachKeyword .keyword-list li .ranking{
+    margin-right: 8px;
+    color: #333;
+}
+.SeachKeyword .keyword-list li .text a{
+    color: #333;
+}

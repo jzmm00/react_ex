@@ -1,0 +1,14 @@
+#root{
+    min-width: 1320px;
+    margin: 0 auto;
+}
+
+.hide{
+    display: block;
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

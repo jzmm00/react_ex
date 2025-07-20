@@ -1,0 +1,88 @@
+.footer1{
+    border-top: 1px solid #ddd;
+    padding: 60px 0;
+}
+.footer2{
+    background-color: #f3f3f3;
+    padding: 40px 0 52px 0;
+}
+.foot-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin: 0 auto;
+}
+.foot-menu .depth1{
+    display: flex;
+    gap: 80px;
+}
+.foot-menu .depth1 > li > a{
+    display: block;
+    margin-bottom: 20px;
+    color: #222;
+    font-weight: 500;
+}
+.foot-menu .sub li{
+    margin-bottom: 8px;
+}
+.foot-menu .sub li a{
+    color: #555;
+}
+.foot-menu .sns .sub ul{
+    display: flex;
+    gap: 8px;
+}
+.f-cs{
+    text-align: right;
+}
+.f-cs h4{
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.f-cs-content .phone{
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.f-cs-content .email{
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.f-cs-content .time{
+    color: #555;
+}
+.footer2 h4{
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.footer2 .cols-content{
+    color: #555;
+    line-height: 1.8;
+}
+.footer2 .bar{
+    display: inline-block;
+    vertical-align: top;
+    margin: 3px 12px 0 12px;
+    font-size: 12px;
+    color: #bbb;
+}
+.footer2 a{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 8px;
+    background-color: #aaa;
+    color: #fff;
+}
+.go-top{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
+.go-top button{
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+}
