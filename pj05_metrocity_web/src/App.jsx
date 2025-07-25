@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { Header, Footer } from './components/commen';
 import { MainPage } from './pages/main';
+import { SearchResult } from './pages/search';
 import './App.css'
 
 const Layout = () => {
@@ -23,6 +24,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route index element={<MainPage />} />
+                        <Route path='/search' element={<SearchResult />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

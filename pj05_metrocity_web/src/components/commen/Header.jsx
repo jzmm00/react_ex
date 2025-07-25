@@ -30,7 +30,7 @@ function Header() {
                         </li>
                     </ul>
                 </div>
-                {isSearch && <SeachWrap />}
+                {isSearch && <SeachWrap handleToggleSearch={handleToggleSearch} />}
         </header>
     )
 }
